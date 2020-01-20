@@ -1,11 +1,11 @@
 #include<iostream>
 #define n 6
-int front = -1, rear = -1;
+int front = -1, rear = -1,x;
 int arr[n];
 
 using namespace std;
 
-void enqueue(int x)
+void enqueue()
 {
     int next = (rear + 1) % n;
     if(next == front )
@@ -13,6 +13,8 @@ void enqueue(int x)
         cout << " queue is full";
         return;
     }
+    cout<<"enter element to be enqueued";
+    cin>>x;
     if(front == -1 && rear == -1)
     {
         front = 0;
@@ -57,14 +59,26 @@ void display()
 
 int main()
 {
-    enqueue(5);
-    enqueue(10);
-    enqueue(15);
-    enqueue(20);
-    enqueue(25); 
-    dequeue();
-    cout<<endl;                                                                                                                                     
-    display();
+    int choice;
+    while(true)
+    {
+        cout<<"enter choice: \n1) display queue: \n2) enqueue: \n3) dequeue: \n";
+        cin>>choice;
+        switch (choice)
+        {
+        case 1: display();
+            cout<<endl;
+            break;
+        case 2: enqueue();
+            cout<<endl;
+            break;
+        case 3: dequeue();
+            cout<<endl;
+            break;
+        default: cout<<"no option selected";
+            break;
+        }
+    }
     return 0;
 }
 
