@@ -36,13 +36,13 @@ void dequeue()
     }
     else if(front == 0 && rear == 0)
     {
-        cout<< " element removed is "<<arr[front];
+        cout<< " element removed is "<<arr[front]<<endl;
         front = -1 ;
         rear = -1 ;
     }
     else 
     {
-        cout<< " element removed is "<<arr[front];
+        cout<< " element removed is "<<arr[front]<<endl;
         front = (front + 1) % n;
     }
 }
