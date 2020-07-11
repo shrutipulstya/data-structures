@@ -57,7 +57,7 @@ void insert_mid(int x)
     n -> prev = temp; 
 }
 
-void insert_inbetween(int x)        //will insert from head
+void insert_anywhere(int x)        //will insert from head
 {
     int pos;
     cout << "enter the position where the node has to be inserted: ";
@@ -90,7 +90,7 @@ void remove_inbetween(int pos) // will remove from head
 }
 
 
-void firstlast_del(int pos)         //will delete from head
+void delfirstlast(int pos)         //will delete from head
 {
     if( h == 0)
     {
@@ -129,7 +129,11 @@ int main()
     insert_head(2);
     insert_head(3);
     insert_head(5);
-    insert_inbetween(4);
+    insert_anywhere(4);
     display();
     return 0;
 }
+
+//CLEANER CODE
+
+

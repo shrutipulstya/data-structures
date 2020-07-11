@@ -56,7 +56,7 @@ bool search(node* root, int num)
     }
 }
 
-// 3 types of traversal
+// 4 types of traversal
 void levelorder(node *root)
 {
     if(root == NULL)

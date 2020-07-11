@@ -1,6 +1,5 @@
-using namespace std;
-
 #include<iostream>
+using namespace std;
 #define n 10
 int arr[n],top = -1;
 

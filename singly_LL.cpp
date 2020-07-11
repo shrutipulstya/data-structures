@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 struct node
@@ -13,7 +12,7 @@ node* l = NULL;
 
 // INSERTING AT THE END
 
-void insert(int x) 
+void insert_Tail(int x) 
 {
     if(h == NULL)
     {
@@ -34,7 +33,7 @@ void insert(int x)
 }
 
 /*INSERTING AT THE BEGINNING*/
-void insert_beg(int x) 
+void insert_head(int x) 
 {
     if( h == NULL)
     {
@@ -54,10 +53,11 @@ void insert_beg(int x)
 }
 
 
-void remove(int position) 
+void remove(int position)       //dosent work for pos 1 . deletes 2nd pos instead
 {
     node *temp = h;
-    for(int i = 1; i < position - 1; i++) {
+    for(int i = 1; i < position - 1; i++) 
+    {
         temp = temp->next;
     }
     node *freeme = temp->next;
@@ -65,41 +65,45 @@ void remove(int position)
     delete freeme;   
 }
 
-/* ANOTHER WAY OF DELETING
-void del(int n)
-{
+// ANOTHER WAY OF DELETING
+void del(int pos)                           // for insert at head deletes from last pos ,also head.
+{                                           //for insert at tail deletes from first pos or head.
     node* temp1 = h;
-    if( n == 1 )
+    if( pos == 1 )
     {
         h = temp1 -> next;
         delete(temp1);
     }
     else
     {
-        for(int i = 0; i< n-2 ; i++)
-        temp1 = temp1 -> next;
+        for(int i = 0; i< pos-2 ; i++)
+        {
+            temp1 = temp1 -> next;
+        }
         node* temp2 = temp1 -> next;
         temp1 -> next = temp2 -> next;
         delete(temp2);
 
     }
-}*/
+}
 
 void display() 
 {
     node* t = h;
     while(t != NULL) 
     {
-        cout<<t->data<<endl;
+        cout<< t -> data << " ";
         t = t -> next;
     }
 }
 
 int main()
 {
-    insert_beg(2);
-    insert_beg(4);
-    insert_beg(6);
-    insert_beg(8);
+    insert_Tail(2);
+    insert_Tail(4);
+    insert_Tail(6);
+    insert_Tail(8);
+    display();cout<<endl;
+    remove(1);
     display();
 }    

@@ -8,17 +8,20 @@ void enqueue() //push
     int x;
     cout<<" enter element to be enqueued: ";
     cin>>x;
-    if(front == -1 && rear == -1)
+    if(rear == n-1)
+    {
+        cout<<"q is full";
+        return;
+    }
+    if(rear == -1 && front == -1)
     {
         front++;
         arr[++rear] = x;
     }
-    else if(rear < n -1) 
+    else
     {
-        arr[++rear] = x;  
+        arr[++rear] = x;
     }
-    else if(n-1 == rear)
-    cout<<"queue is full!! no more elements can be added\n";
 }
 
 void dequeue() //pop
@@ -28,7 +31,6 @@ void dequeue() //pop
         cout<<"queue is empty !! no element can be dequeued";
         return;
     }
-    else 
     front++;
 }
 
